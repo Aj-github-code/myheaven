@@ -1,0 +1,119 @@
+#load_images {
+    min-height: 130px;
+}
+.tile-basic{
+    float:left;
+    width:100%;
+    background:#F5F5F5;
+    color:#454545;
+    margin-bottom:25px;
+    position:relative
+}
+.tile-basic .tile-image{
+    display:block;
+    float:left;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    height:140px;
+    vertical-align:middle;
+    line-height:140px
+}
+.tile-basic .tile-image img{
+    width:100%
+}
+.tile-basic .tile-image .tile-image-container{
+    width:100%;
+    padding:15px;
+    position:absolute;
+    left:0;
+    top:0
+}
+.tile-basic .tile-image .tile-image-title{
+    width:100%;
+    padding:0 5px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    color:#FFF;
+    background:rgba(0,0,0,.2);
+    text-shadow:0 2px 5px #000;
+    -webkit-transition:all 100ms ease-in;
+    -moz-transition:all 100ms ease-in;
+    -ms-transition:all 100ms ease-in;
+    -o-transition:all 100ms ease-in;
+    transition:all 100ms ease-in;
+    font-size:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    height:30px;
+    line-height:30px;
+    right:0
+}
+.tile-basic .tile-image .tile-image-title .tile-title{
+    color:#FFF;
+    font-size:14px;
+    line-height:26px;
+    font-weight:600;
+    text-decoration:none
+}
+.tile-basic .tile-image .tile-image-title p{
+    margin:0;
+    color:#F0F0F0
+}
+.tile-basic .tile-image .tile-image-title.tile-image-dir-top{
+    bottom:auto;
+    top:0
+}
+.tile-basic .tile-image .tile-image-title.tile-image-title-hover{
+    bottom:-200px
+}
+.tile-basic .tile-image .tile-image-hover{
+    position:absolute;
+    left:0;
+    top:-300px;
+    background:rgba(0,0,0,.5);
+    height:100%;
+    width:100%;
+    opacity:0;
+    -webkit-transition:opacity 200ms ease-in;
+    -moz-transition:opacity 200ms ease-in;
+    -ms-transition:opacity 200ms ease-in;
+    -o-transition:opacity 200ms ease-in;
+    transition:opacity 200ms ease-in
+}
+.tile-basic .tile-image .tile-image-hover .tile-image-container-vertical{
+    position:absolute;
+    width:100%
+}
+.tile-basic .tile-image .tile-image-hover .tile-image-container-vertical button{
+    font-size:12px
+}
+.tile-basic .tile-image .tile-image-hover.tile-image-hover-light{
+    background:rgba(255,255,255,.9)
+}
+.tile-basic .tile-image:hover .tile-image-title{
+    background:rgba(0,0,0,.4)
+}
+.tile-basic .tile-image:hover .tile-image-title.tile-image-title-hover{
+    bottom:0
+}
+.tile-basic .tile-image:hover .tile-image-title.tile-image-title-hide-hover{
+    bottom:-200px
+}
+.tile-basic .tile-image:hover .tile-image-hover{
+    top:0;
+    opacity:1
+}
+.tile-basic .tile-image:hover .tile-image-hover .btn {
+    padding: 5px;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 999;
+}
+.gallery-img-delete{
+    position:absolute;
+    top:0;
+    right:0
+}

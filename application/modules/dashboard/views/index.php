@@ -147,7 +147,7 @@
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
         <div class="card overflow-hidden project-card">
             <a href="<?php echo base_url(my_products_constants::my_products_url); ?>">
@@ -370,36 +370,36 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="row">
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="card">
             <div class="card-header pt-4 pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-10 ">Purchase Statistics</h4>
+                    <h4 class="card-title mg-b-10 ">Total Left BV :</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                 </div>
             </div>
-            <div class="pl-4 pr-4 pt-4 pb-3">
+            <div class="pl-4 pr-4 pt-0 pb-3">
                 <div class="">
                     <div class="row">
-                        <div class="col-md-6 col-6 text-center">
+                        <div class="col-md-12 col-12 text-center">
                             <div class="task-box primary mb-0">
-                                <p class="mb-0 tx-12">Total Orders</p>
-                                <h3 class="mb-0"><?php echo $orders['completed']; ?></h3>
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['left_unit']; ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-6 text-center">
+                        <!-- <div class="col-md-6 col-6 text-center">
                             <div class="task-box danger mb-0">
                                 <p class="mb-0 tx-12">Total Expense</p>
                                 <h3 class="mb-0">₹ <?php echo handle_number_format($order_summary['final_d_p']); ?></h3>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="task-stat pb-0">
+            <!-- <div class="task-stat pb-0">
                 <div class="d-flex tasks">
                     <div class="mb-0">
                         <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
@@ -430,36 +430,36 @@
                     </div>
                     <span class="float-right ml-auto">₹ <?php echo handle_number_format($order_summary['service_charge']); ?></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="card">
             <div class="card-header pt-4 pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-10 ">Top Up Statistics</h4>
+                    <h4 class="card-title mg-b-10 ">Total Right BV :</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                 </div>
             </div>
-            <div class="pl-4 pr-4 pt-4 pb-3">
+            <div class="pl-4 pr-4 pt-0 pb-3">
                 <div class="">
                     <div class="row">
-                        <div class="col-md-6 col-6 text-center">
+                        <div class="col-md-12 col-12 text-center">
                             <div class="task-box primary mb-0">
-                                <p class="mb-0 tx-12">Total Orders</p>
-                                <h3 class="mb-0"><?php echo $top_up_orders['completed']; ?></h3>
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['right_unit']; ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-6 text-center">
+                        <!-- <div class="col-md-6 col-6 text-center">
                             <div class="task-box danger mb-0" style="background: linear-gradient(45deg, #0C890C, #4BEC1E);box-shadow: 0 7px 30px #4BEC1E82;">
                                 <p class="mb-0 tx-12">Total Sale</p>
                                 <h3 class="mb-0">₹ <?php echo handle_number_format($top_up_summary['final_d_p']); ?></h3>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="task-stat pb-0">
+            <!-- <div class="task-stat pb-0">
                 <div class="d-flex tasks">
                     <div class="mb-0">
                         <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
@@ -490,39 +490,37 @@
                     </div>
                     <span class="float-right ml-auto">₹ <?php echo handle_number_format($top_up_summary['service_charge']); ?></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="card">
             <div class="card-header pt-4 pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-10 ">Repurchase Statistics</h4>
+                    <h4 class="card-title mg-b-10 ">Total Left Used BV :</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                 </div>
             </div>
-            <div class="pl-4 pr-4 pt-4 pb-3">
+            <div class="pl-4 pr-4 pt-0 pb-3">
                 <div class="">
                     <div class="row">
-                        <div class="col-md-6 col-6 text-center">
+                        <div class="col-md-12 col-12 text-center">
                             <div class="task-box primary mb-0">
-                                <p class="mb-0 tx-12">Total Orders</p>
-                                <h3 class="mb-0"><?php echo $repurchase_orders['completed']; ?></h3>
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['total_used_left']; ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-6 text-center">
+                        <!-- <div class="col-md-6 col-6 text-center">
                             <div class="task-box danger mb-0" style="background: linear-gradient(45deg, #0C890C, #4BEC1E);box-shadow: 0 7px 30px #4BEC1E82;">
                                 <p class="mb-0 tx-12">Total Sale</p>
                                 <h3 class="mb-0">₹ <?php echo handle_number_format($repurchase_summary['final_d_p']); ?></h3>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="task-stat pb-0">
+            <!-- <div class="task-stat pb-0">
                 <div class="d-flex tasks">
                     <div class="mb-0">
                         <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
@@ -553,36 +551,40 @@
                     </div>
                     <span class="float-right ml-auto">₹ <?php echo handle_number_format($repurchase_summary['service_charge']); ?></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+</div>
+
+<div class="row">
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="card">
             <div class="card-header pt-4 pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-10 ">Customer Order Statistics</h4>
+                    <h4 class="card-title mg-b-10 ">Total Right Used BV :</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                 </div>
             </div>
-            <div class="pl-4 pr-4 pt-4 pb-3">
+            <div class="pl-4 pr-4 pt-0 pb-3">
                 <div class="">
                     <div class="row">
-                        <div class="col-md-6 col-6 text-center">
+                        <div class="col-md-12 col-12 text-center">
                             <div class="task-box primary mb-0">
-                                <p class="mb-0 tx-12">Total Orders</p>
-                                <h3 class="mb-0"><?php echo $customer_orders['completed']; ?></h3>
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['total_used_right']; ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-6 col-6 text-center">
+                        <!-- <div class="col-md-6 col-6 text-center">
                             <div class="task-box danger mb-0" style="background: linear-gradient(45deg, #0C890C, #4BEC1E);box-shadow: 0 7px 30px #4BEC1E82;">
                                 <p class="mb-0 tx-12">Total Sale</p>
                                 <h3 class="mb-0">₹ <?php echo handle_number_format($customer_summary['final_d_p']); ?></h3>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="task-stat pb-0">
+            <!-- <div class="task-stat pb-0">
                 <div class="d-flex tasks">
                     <div class="mb-0">
                         <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
@@ -613,7 +615,127 @@
                     </div>
                     <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['service_charge']); ?></span>
                 </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+        <div class="card">
+            <div class="card-header pt-4 pb-0">
+                <div class="d-flex justify-content-between">
+                    <h4 class="card-title mg-b-10 ">Total Left Available :</h4>
+                    <i class="mdi mdi-dots-horizontal text-gray"></i>
+                </div>
             </div>
+            <div class="pl-4 pr-4 pt-0 pb-3">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 col-12 text-center">
+                            <div class="task-box primary mb-0">
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['available_left']; ?></h3>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6 col-6 text-center">
+                            <div class="task-box danger mb-0" style="background: linear-gradient(45deg, #0C890C, #4BEC1E);box-shadow: 0 7px 30px #4BEC1E82;">
+                                <p class="mb-0 tx-12">Total Sale</p>
+                                <h3 class="mb-0">₹ <?php echo handle_number_format($customer_summary['final_d_p']); ?></h3>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="task-stat pb-0">
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
+                    </div>
+                    <span class="float-right ml-auto"><?php echo $customer_summary['total_quantity']; ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total D.P.</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_d_p']); ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total B.V.</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_b_v']); ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total GST</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_gst']); ?></span>
+                </div>
+                <div class="d-flex tasks mb-0 border-bottom-0">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Service Charge</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['service_charge']); ?></span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+        <div class="card">
+            <div class="card-header pt-4 pb-0">
+                <div class="d-flex justify-content-between">
+                    <h4 class="card-title mg-b-10 ">Total Right Available :</h4>
+                    <i class="mdi mdi-dots-horizontal text-gray"></i>
+                </div>
+            </div>
+            <div class="pl-4 pr-4 pt-0 pb-3 ">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-12 col-12 text-center">
+                            <div class="task-box primary mb-0">
+                                <!-- <p class="mb-0 tx-12">Total Orders</p> -->
+                                <h3 class="mb-0"><?php echo $list['availbale_right']; ?></h3>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6 col-6 text-center">
+                            <div class="task-box danger mb-0" style="background: linear-gradient(45deg, #0C890C, #4BEC1E);box-shadow: 0 7px 30px #4BEC1E82;">
+                                <p class="mb-0 tx-12">Total Sale</p>
+                                <h3 class="mb-0">₹ <?php echo handle_number_format($customer_summary['final_d_p']); ?></h3>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="task-stat pb-0">
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Quantity</div>
+                    </div>
+                    <span class="float-right ml-auto"><?php echo $customer_summary['total_quantity']; ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total D.P.</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_d_p']); ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total B.V.</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_b_v']); ?></span>
+                </div>
+                <div class="d-flex tasks">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total GST</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['total_gst']); ?></span>
+                </div>
+                <div class="d-flex tasks mb-0 border-bottom-0">
+                    <div class="mb-0">
+                        <div class="h6 fs-15 mb-0"><i class="far fa-dot-circle text-primary mr-2"></i>Total Service Charge</div>
+                    </div>
+                    <span class="float-right ml-auto">₹ <?php echo handle_number_format($customer_summary['service_charge']); ?></span>
+                </div>
+            </div> -->
         </div>
     </div>
 </div>

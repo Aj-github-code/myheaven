@@ -38,7 +38,7 @@
         <link href="<?php echo assets_url(); ?>css/global.css" rel="stylesheet">
         <link href="<?php echo assets_url(); ?>css/custom.css" rel="stylesheet">
         <link href="<?php echo assets_url(); ?>css/daterangepicker.css" rel="stylesheet">
-
+        <link href="<?php echo assets_url(); ?>css/tree.css" rel="stylesheet">
         <!--- JQuery min js --->
         <script src="<?php echo assets_url(); ?>plugins/jquery/jquery.min.js"></script>
         <script src="<?php echo assets_url(); ?>plugins/jquery_ui/jquery-ui.min.js"></script>
@@ -51,6 +51,7 @@
         <script src="<?php echo assets_url(); ?>plugins/toastr/toastr.min.js"></script>
         <script src="<?php echo assets_url(); ?>plugins/validation/jquery.validate.min.js"></script>
         <script src="<?php echo assets_url(); ?>plugins/validation/additional-methods.min.js"></script>
+        <script src="<?php echo assets_url(); ?>js/jquery.tipbox.js"></script>
 
         <?php if(isset($loggedin) && $loggedin == 'yes'){ ?>
             <script src="<?php echo assets_url(); ?>plugins/pickadate/js/picker.js"></script>

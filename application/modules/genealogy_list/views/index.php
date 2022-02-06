@@ -164,5 +164,3 @@
     
     initTable();
 </script>
-
-<?php $this->load->view('right_list'); ?>

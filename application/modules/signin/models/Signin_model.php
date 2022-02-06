@@ -7,6 +7,7 @@
         private $table_user_ip_blacklist    = signin_table::sql_tbl_user_ip_blacklist;
         private $table_pinreferencetable    = signin_table::sql_tbl_user_pinreferencetable;
         private $table_pintable             = signin_table::sql_tbl_user_pintable;
+        private $table_franchise            = signin_table::sql_tbl_franchise;
 
         public function __construct()
         {
@@ -191,5 +192,13 @@ updateUnits($row['placementid'],$pinno);
                 {
                 return $userid;
                 }        
+            }
+
+            function get_sponsor($sponsorid)
+            {
+                $this->db->select('your_name,ownid,id');
+                $this->db->where('ownid',$sponsorid);
+                $result = $this->db->get($this->table_franchise);
+                return $result->row_array();
             }
     }

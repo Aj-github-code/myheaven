@@ -45,6 +45,15 @@ class Signin extends MY_Controller {
 		}
 		else
 		{
+			if(!empty($_GET['sponsor_id']))
+			{
+				$datas 	= $this->signin->get_sponsor(base64_decode($_GET['sponsor_id']));
+				$list['sponsor_name'] 	= $datas['your_name'];
+				$list['sponsor_id'] 	= $datas['id'];
+				$list['placement']		= base64_decode($_GET['placement']);
+				$data['post_data'] 		= $list;	
+				// print_r($_GET['placement']);exit();
+			}
 			if ($this->input->post()) {
 				$response=$this->post_registrstion();
 
@@ -53,6 +62,7 @@ class Signin extends MY_Controller {
 				redirect(base_url() . dashboard_constants::dashboard_url);
 
 				}else{
+					
 					$data["post_data"]=$this->input->post();
 				}
 			}
@@ -517,9 +527,11 @@ class Signin extends MY_Controller {
     	$response 	= ['error' => 1, 'message' => 'Invalid request'];
     	$user_signin = $this->signin->get_user_data($type, $username);
 
+
 		if(count($user_signin) > 0)
 		{
 			$user_id 				= $user_signin['id'];
+			$ownid					= $user_signin['ownid'];
 			$status 				= $user_signin['status'];
 			$hashed_pass 			= $user_signin['password'];
 
@@ -528,6 +540,7 @@ class Signin extends MY_Controller {
 				$user_data = array(
 								'id' 		=> $user_id,
 								'status'	=> $status,
+								'ownid'     => $ownid,
 							);
 
 				if($signin_type == 'password')
@@ -564,6 +577,7 @@ class Signin extends MY_Controller {
     	{
     		$session_data = array(
 									'user_id' 			=> isset($user_data['id']) ? $user_data['id'] : '',
+									'ownid'				=> isset($user_data['ownid']) ? $user_data['ownid'] : '',
 									'status'			=> isset($user_data['status']) ? $user_data['status'] : '',
 									'signin_'.$this->config->item('session_key') => TRUE,
 									'last_activity' 	=> time(),

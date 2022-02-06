@@ -1,6 +1,6 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-
+<?php $this->load->view('table'); ?>
 <!--  -->
 <input type="hidden" id="<?php echo $this->security->get_csrf_token_name(); ?>" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
 
@@ -19,7 +19,7 @@
 
     function filterTable() {
         showLoader();
-        $('#dataTableWraps').html('<div class="table-responsive"><table id="dataTableIds"></table></div>');
+        $('#dataTableWrap').html('<div class="table-responsive"><table id="dataTableId"></table></div>');
         loadTable();
     }
 
@@ -28,12 +28,12 @@
         clear_from_to_date();
         role_select_box(role_url, '', '', 'multiple');
         status_select_box();
-        $('#dataTableWraps').html('<div class="table-responsive"><table id="dataTableIds"></table></div>');
+        $('#dataTableWrap').html('<div class="table-responsive"><table id="dataTableId"></table></div>');
         loadTable();
     }
 
     function initTable() {
-        $('#dataTableIds').bootstrapTable({
+        $('#dataTableId').bootstrapTable({
             url: base_url+'<?php echo genealogy_constants::right_member_list_url; ?>',
             method: 'GET',                
             queryParams: function (params) {

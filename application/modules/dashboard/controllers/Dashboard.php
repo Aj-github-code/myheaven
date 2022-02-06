@@ -222,6 +222,16 @@
                                                                                         news_table::sql_tbl_news
                                                                                     ),
                                         ];
+            $userid = $this->session->userdata('ownid');
+            $datas              = $this->dashboard->get_data($userid);
+            $list['left_unit']  = $datas['totalunitleft'];
+            $list['right_unit']  = $datas['totalunitright'];
+            $list['total_used_left']  = $datas['totalusedunitleft'];
+            $list['total_used_right']  = $datas['totalusedunitright'];
+            $list['available_left']= $list['left_unit'] - $list['total_used_left'];
+            $list['availbale_right']= $list['right_unit'] - $list['total_used_right'];
+            $data['list'] = $list;
+
 
             $this->breadcrumbs->unshift(1, 'Dashboard', dashboard_constants::dashboard_url);
             $data['breadcrumb']         = $this->breadcrumbs->show();

@@ -3,7 +3,8 @@
 
 	class Genealogy_constants {
 
-		const genealogy_url 						= "genealogy";
+		const left_member_url 						= "left_member";
+		const right_member_url						= "right_member";
 		const left_member_list_url 					= "left_member_list";
 		const right_member_list_url 				= "right_member_list";
 		const my_directs_url 						= "my_directs";

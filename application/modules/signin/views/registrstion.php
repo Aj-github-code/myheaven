@@ -1,10 +1,20 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed'); ?>
 
-<div class="row">
-    <div class="col-lg-12 col-md-12">
-        <div class="card">
-            <div class="card-header bd-b">
-                <h5 class="card-title mb-0"><?php echo $page_title; ?></h5>
+
+<div class="row d-flex justify-content-around mt-4">
+    <div class="col-lg-8 col-md-8 mt-4">
+        <div class="card ">
+            
+            <div class="card-header bd-b page-signin-style ">
+
+                <div class="main-signin-wrapper ">
+
+                    <div class="my-auto authentication-pages">
+                
+                        <h5 class="card-title mb-0"><?php echo $page_title; ?></h5>
+                    </div>
+                </div>
+               
             </div>
             <div class="card-body">
                 <form id="formId" class="" method="POST" action="" enctype="multipart/form-data">
@@ -29,7 +39,25 @@
                     </div>
 
                     <div class="row">
+                        
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Enter Sponsor Id</label>
+                                <input type='text' class="form-control" id="sponsor_id" name="sponsor_id" placeholder="" value="<?php echo set_value('sponsor_id', (isset($post_data['sponsor_id']) ? $post_data['sponsor_id'] : '')); ?>" data-error=".memberiderror" maxlength="50"/>
+                                <div class="sponsor_iderror error_msg"><?php echo form_error('sponsor_id', '<label class="danger">', '</label>'); ?></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Enter Sponsor Name</label>
+                                <input type='text' class="form-control" id="placementid" name="sponsor_name" placeholder="" value="<?php echo set_value('sponsor_name', (isset($post_data['sponsor_name']) ? $post_data['sponsor_name'] : '')); ?>" data-error=".sponsor_nameerror" maxlength="50"/>
+                                <div class="sponsor_nameerror error_msg"><?php echo form_error('sponsor_name', '<label class="danger">', '</label>'); ?></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-6">
                                 <div class="form-group">
                                 <label class="form-label">placement <span class="asterisk">*</span></label>
                                 <select class="select2" name="placement" id="placement" style="width: 100%;" data-error=".placementerror" required>
@@ -42,28 +70,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label">Enter Sponsor Id</label>
-                                <input type='text' class="form-control" id="sponsor_id" name="sponsor_id" placeholder="" value="<?php echo set_value('sponsor_id', (isset($post_data['sponsor_id']) ? $post_data['sponsor_id'] : '')); ?>" data-error=".memberiderror" maxlength="50"/>
-                                <div class="sponsor_iderror error_msg"><?php echo form_error('sponsor_id', '<label class="danger">', '</label>'); ?></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
                                 <label class="form-label">password <span class="asterisk">*</span></label>
                                 <input type='text' class="form-control" id="password" name="password" placeholder="" value="<?php echo set_value('password', (isset($post_data['password']) ? $post_data['password'] : '')); ?>" data-error=".passworderror" maxlength="191" required/>
                                 <div class="passworderror error_msg"><?php echo form_error('password', '<label class="danger">', '</label>'); ?></div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Enter dob Id</label>
-                                <input type='date' class="form-control" id="dob_id" name="dob_id" placeholder="" value="<?php echo set_value('dob_id', (isset($post_data['dob_id']) ? $post_data['dob_id'] : '')); ?>" data-error=".memberiderror" maxlength="50"/>
-                                <div class="dob_iderror error_msg"><?php echo form_error('dob_id', '<label class="danger">', '</label>'); ?></div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -75,15 +87,23 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-label">Email <span class="asterisk">*</span></label>
-                                <input type='text' class="form-control to_lowercase" id="email" name="email" placeholder="" value="<?php echo set_value('email', (isset($post_data['email']) ? $post_data['email'] : '')); ?>" data-error=".emailerror" maxlength="50" required/>
-                                <div class="emailerror error_msg"><?php echo form_error('email', '<label class="danger">', '</label>'); ?></div>
+                                <label class="form-label">Enter dob Id</label>
+                                <input type='date' class="form-control" id="dob_id" name="dob_id" placeholder="" value="<?php echo set_value('dob_id', (isset($post_data['dob_id']) ? $post_data['dob_id'] : '')); ?>" data-error=".memberiderror" maxlength="50"/>
+                                <div class="dob_iderror error_msg"><?php echo form_error('dob_id', '<label class="danger">', '</label>'); ?></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-12">
+                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Email <span class="asterisk">*</span></label>
+                                <input type='text' class="form-control to_lowercase" id="email" name="email" placeholder="" value="<?php echo set_value('email', (isset($post_data['email']) ? $post_data['email'] : '')); ?>" data-error=".emailerror" maxlength="50" required/>
+                                <div class="emailerror error_msg"><?php echo form_error('email', '<label class="danger">', '</label>'); ?></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label" for="address">Address</label>
                                 <textarea class="form-control" id="address" name="address"><?php echo (isset($post_data['address']) ? $post_data['address'] : ''); ?></textarea>
@@ -148,6 +168,9 @@
             placement: {
                 required: true,
             }, 
+            placementid: {
+                required: true,
+            },
             sponsor_id: {
                 required: true,
             },
@@ -186,6 +209,9 @@
             placement: {
                 required: 'Please enter placement',
             },  
+            placementid: {
+                required: 'Please enter sponsor name',
+            },
             sponsor_id: {
                 required: 'Please enter sponsor_id',
             },
@@ -232,6 +258,7 @@
             var password            = $('#password').val();
             var dob                 = $('#dob').val();
             var status              = $('#status').val();
+            var placementid         = $('#placementid').val();
             var pan                 = $('#pan').val();
             var type                = "user";
             var medium              = "web";

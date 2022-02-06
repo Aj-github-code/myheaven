@@ -36,7 +36,7 @@ $config['assets_url']		= $config['base_url']."source/backend_assets/";
 define('base_url', $config['base_url']);
 define('assets_url', $config['assets_url']);
 define('content_url', $config['content_url']);
-define('main_root_url', $config['base_url']);
+define('main_root_url',$config['base_url']);
 define('admin_url', $admin_url);
 define('frontend_assets_url', $config['base_url']."source/frontend_assets/");
 

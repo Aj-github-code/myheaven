@@ -20,12 +20,12 @@
                     <!-- <div class="nav-item full-screen fullscreen-button">
                         <a class="new nav-link full-screen-link" href="#"><i class="fe fe-maximize"></i></span></a>
                     </div> -->
-                    <div class="nav-item main-header-message ">
+                    <!-- <div class="nav-item main-header-message ">
                         <a class="new nav-link" href="<?php echo cart_constants::cart_url; ?>">
                             <i class="fa fa-cart-plus text-left"></i>
                             <span class="pulse-danger text-white" id="cart-quantity" style="font-weight: 700;font-size: 13px;">0</span>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!-- News Start -->
                     <div class="dropdown  nav-item main-header-message ">

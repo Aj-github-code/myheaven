@@ -4,4 +4,5 @@
 	class Genealogy_table {
 		const sql_userdetails	 = 'userdetails';
 		const sql_useroption 	 = 'useroption';
+		const sql_tbl_franchise	 = 'tbl_franchise';
 	}

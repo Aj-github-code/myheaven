@@ -88,6 +88,7 @@ $autoload['libraries'] = array(
 							'password/password_constants',
 							'forgot_password/forgot_password_constants',
 							'dashboard/dashboard_constants',
+							'dashboard/dashboard_table',
 							'kyc/kyc_constants',
 							'kyc/kyc_table',
 							'announcements/announcements_constants',
@@ -125,6 +126,12 @@ $autoload['libraries'] = array(
 							'network/networks_constants',
 							'genealogy_list/genealogy_table',
 							'genealogy_list/genealogy_constants',	
+							'binary_tree/binary_table',
+							'binary_tree/binary_constants',	
+							'accounts/accounts_table',
+							'accounts/accounts_constants',
+							'join_link/joins_table',
+							'join_link/joins_constants',
 						);
 
 /*

@@ -6,4 +6,6 @@
 		const sql_tbl_user_ip_blacklist			= 'tbl_admin_user_ip_blacklist';
 		const sql_tbl_user_pinreferencetable	= 'tbl_pinreferencetable';
 		const sql_tbl_user_pintable 			= 'tbl_pintable';
+		const sql_tbl_franchise		 			= 'tbl_franchise';
+		
 	}

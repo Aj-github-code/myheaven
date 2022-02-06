@@ -4,16 +4,16 @@
 <aside class="main-sidebar app-sidebar sidebar-scroll">
     <div class="main-sidebar-header">
         <a class="desktop-logo logo-light active" href="<?php echo base_url(); ?>" class="text-center mx-auto">
-            <img src="<?php echo assets_url(); ?>img/logo/myheavenlogo.png" class="main-logo">
+            <img src="<?php echo assets_url(); ?>img/logo/mycomlogo.png" class="main-logo">
         </a>
         <a class="desktop-logo icon-logo active" href="<?php echo base_url(); ?>">
-            <img src="<?php echo assets_url(); ?>img/logo/myheavenlogo.png" class="logo-icon">
+            <img src="<?php echo assets_url(); ?>img/logo/mycomlogo.png" class="logo-icon">
         </a>
         <a class="desktop-logo logo-dark active" href="<?php echo base_url(); ?>">
-            <img src="<?php echo assets_url(); ?>img/logo/myheavenlogo.png" class="main-logo dark-theme" alt="logo">
+            <img src="<?php echo assets_url(); ?>img/logo/mycomlogo.png" class="main-logo dark-theme" alt="logo">
         </a>
         <a class="logo-icon mobile-logo icon-dark active" href="<?php echo base_url(); ?>">
-            <img src="<?php echo assets_url(); ?>img/logo/myheavenlogo.png" class="logo-icon dark-theme" alt="logo">
+            <img src="<?php echo assets_url(); ?>img/logo/mycomlogo.png" class="logo-icon dark-theme" alt="logo">
         </a>
     </div>
     <div class="main-sidebar-loggedin">
@@ -69,12 +69,7 @@
                     <span class="side-menu__label">Overview</span>
                 </a>
             </li>
-            <li class="slide <?php if(isset($menu) && $menu == 'support'){ echo 'active'; } ?>">
-                <a class="side-menu__item" href="<?php echo base_url(supports_constants::support_url); ?>">
-                    <i class="side-menu__icon fas fa-dolly-flatbed"></i>
-                    <span class="side-menu__label">Support</span>
-                </a>
-            </li>
+           
             <li class="slide <?php if(isset($menu) && $menu == 'genealogy list'){ echo 'active-menu-expanded is-expanded'; } ?>">
                 <a class="side-menu__item <?php if(isset($menu) && $menu == 'genealogy list'){ echo 'active'; } ?>" data-toggle="slide" href="javascript:void(0);">
                     <i class="side-menu__icon icon fa fa-users"></i>
@@ -82,15 +77,73 @@
                     <i class="angle fe fe-chevron-down"></i>
                 </a>
                 <ul class="slide-menu">
-                    <li class="<?php if(isset($menu) && $menu == 'genealogy list' && isset($submenu) && $submenu == 'list'){ echo 'active'; } ?>">
-                        <a class="slide-item <?php if(isset($menu) && $menu == 'genealogy list' && isset($submenu) && $submenu == 'g_list'){ echo 'active'; } ?>" href="<?php echo base_url(genealogy_constants::genealogy_url); ?>">Genealogy List</a>
+                    <li class="<?php if(isset($menu) && $menu == 'left member list' && isset($submenu) && $submenu == 'l_list'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'left member list' && isset($submenu) && $submenu == 'l_list'){ echo 'active'; } ?>" href="<?php echo base_url(genealogy_constants::left_member_url); ?>">Left List</a>
                     </li>
-                    <li class="<?php if(isset($menu) && $menu == 'genealogy list' && isset($submenu) && $submenu == 'd_list'){ echo 'active'; } ?>">
-                        <a class="slide-item <?php if(isset($menu) && $menu == 'genealogy list' && isset($submenu) && $submenu == 'd_list'){ echo 'active'; } ?>" href="<?php echo base_url(genealogy_constants::my_directs_url); ?>">Direct List</a>
+                    <li class="<?php if(isset($menu) && $menu == 'right member' && isset($submenu) && $submenu == 'r_list'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'right member' && isset($submenu) && $submenu == 'r_list'){ echo 'active'; } ?>" href="<?php echo base_url(genealogy_constants::right_member_url); ?>">Right List</a>
+                    </li>
+                    <li class="<?php if(isset($menu) && $menu == 'direct list' && isset($submenu) && $submenu == 'd_list'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'direct list' && isset($submenu) && $submenu == 'd_list'){ echo 'active'; } ?>" href="<?php echo base_url(genealogy_constants::my_directs_url); ?>">Direct List</a>
                     </li>
                 </ul>
             </li>
-            <li class="slide <?php if(isset($menu) && $menu == 'products'){ echo 'active'; } ?>">
+            <li class="slide <?php if(isset($menu) && $menu == 'binary tree'){ echo 'active-menu-expanded is-expanded'; } ?>">
+                <a class="side-menu__item <?php if(isset($menu) && $menu == 'binary tree'){ echo 'active'; } ?>" data-toggle="slide" href="javascript:void(0);">
+                    <i class="side-menu__icon icon fa fa-users"></i>
+                    <span class="side-menu__label">Network</span>
+                    <i class="angle fe fe-chevron-down"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li class="<?php if(isset($menu) && $menu == 'binary tree' && isset($submenu) && $submenu == 'b_tree'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'binary tree' && isset($submenu) && $submenu == 'b_tree'){ echo 'active'; } ?>" href="<?php echo base_url(binary_constants::binary_tree_url); ?>">Binary Tree</a>
+                    </li>
+                    <li class="<?php if(isset($menu) && $menu == 'dircet tree' && isset($submenu) && $submenu == 'd_tree'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'dircet tree' && isset($submenu) && $submenu == 'd_tree'){ echo 'active'; } ?>" href="<?php echo base_url(binary_constants::direct_tree_url); ?>">Direct Tree</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="slide <?php if(isset($menu) && $menu == 'payout records'){ echo 'active-menu-expanded is-expanded'; } ?>">
+                <a class="side-menu__item <?php if(isset($menu) && $menu == 'payout records'){ echo 'active'; } ?>" data-toggle="slide" href="javascript:void(0);">
+                    <i class="side-menu__icon icon fa fa-users"></i>
+                    <span class="side-menu__label">Payout</span>
+                    <i class="angle fe fe-chevron-down"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li class="<?php if(isset($menu) && $menu == 'payout income' && isset($submenu) && $submenu == 'd_tree'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'payout income' && isset($submenu) && $submenu == 'payout'){ echo 'active'; } ?>" href="<?php echo base_url(accounts_constants::payouts_url); ?>">Payout Income</a>
+                    </li>
+                    <li class="<?php if(isset($menu) && $menu == 'payout records' && isset($submenu) && $submenu == 'payout_records'){ echo 'active'; } ?>">
+                        <a class="slide-item <?php if(isset($menu) && $menu == 'payout records' && isset($submenu) && $submenu == 'payout_records'){ echo 'active'; } ?>" href="<?php echo base_url(accounts_constants::payouts_records_url); ?>">Payout Income Records</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="slide <?php if(isset($menu) && $menu == 'join'){ echo 'active'; } ?>">
+                <a class="side-menu__item" href="<?php echo base_url(joins_constants::join_link_url); ?>">
+                    <i class="side-menu__icon icon ion-ios-list-box"></i>
+                    <span class="side-menu__label">Join</span>
+                </a>
+            </li>
+            <li class="slide <?php if(isset($menu) && $menu == 'i_card'){ echo 'active'; } ?>">
+                <a class="side-menu__item" href="<?php echo base_url(i_card_constants::i_card_url); ?>">
+                    <i class="side-menu__icon icon ion-ios-list-box"></i>
+                    <span class="side-menu__label">I Card</span>
+                </a>
+            </li>
+            <li class="slide <?php if(isset($menu) && $menu == 'kyc'){ echo 'active'; } ?>">
+                <a class="side-menu__item" href="<?php echo base_url(kyc_constants::kyc_url); ?>">
+                    <i class="side-menu__icon icon ion-ios-list-box"></i>
+                    <span class="side-menu__label">My Kyc</span>
+                </a>
+            </li>
+            <li class="slide <?php if(isset($menu) && $menu == 'support'){ echo 'active'; } ?>">
+                <a class="side-menu__item" href="<?php echo base_url(supports_constants::support_url); ?>">
+                    <i class="side-menu__icon icon fa fa-users"></i>
+                    <span class="side-menu__label">Support</span>
+                </a>
+            </li>
+            <!-- <li class="slide <?php if(isset($menu) && $menu == 'products'){ echo 'active'; } ?>">
                 <a class="side-menu__item" href="<?php echo base_url(products_constants::products_url); ?>">
                     <i class="side-menu__icon fas fa-dolly-flatbed"></i>
                     <span class="side-menu__label">Order Products</span>
@@ -115,18 +168,7 @@
                     <span class="side-menu__label">My Products</span>
                 </a>
             </li>
-            <li class="slide <?php if(isset($menu) && $menu == 'i_card'){ echo 'active'; } ?>">
-                <a class="side-menu__item" href="<?php echo base_url(i_card_constants::i_card_url); ?>">
-                    <i class="side-menu__icon icon ion-ios-list-box"></i>
-                    <span class="side-menu__label">I Card</span>
-                </a>
-            </li>
-            <li class="slide <?php if(isset($menu) && $menu == 'kyc'){ echo 'active'; } ?>">
-                <a class="side-menu__item" href="<?php echo base_url(kyc_constants::kyc_url); ?>">
-                    <i class="side-menu__icon icon ion-ios-list-box"></i>
-                    <span class="side-menu__label">My Kyc</span>
-                </a>
-            </li>
+           
             <li class="slide <?php if(isset($menu) && $menu == 'top_up'){ echo 'active'; } ?>">
                 <a class="side-menu__item" href="<?php echo base_url(top_up_constants::top_up_url); ?>">
                     <i class="side-menu__icon fe fe-shopping-cart"></i>
@@ -196,7 +238,7 @@
                     <span class="side-menu__label">Announcements</span>
                     <span class="badge badge-info side-badge"><?php echo $announcements_not_seen; ?></span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </aside>

@@ -11,21 +11,43 @@
 
         function index()
         {
-            $data['meta_title']             = "Genealogy list";
-            $data['meta_description']       = "Genealogy list";
-            $data['meta_keywords']          = "Genealogy list";
-            $data['page_title']             = "Genealogy list";
-            $data['module']                 = "Genealogy list";
-            $data['menu']                   = "genealogy list";
-            $data['submenu']                = "g_list";
+            $data['meta_title']             = "Left member";
+            $data['meta_description']       = "Left member";
+            $data['meta_keywords']          = "Left member";
+            $data['page_title']             = "Left member";
+            $data['module']                 = "Left member";
+            $data['menu']                   = "left member";
+            $data['submenu']                = "l_list";
             $data['childmenu']              = "";
             $data['loggedin']               = "yes";
 
-            $this->breadcrumbs->unshift(1, 'Genealogy', genealogy_constants::genealogy_url);
+            $this->breadcrumbs->unshift(1, 'Genealogy', genealogy_constants::left_member_url);
             $this->breadcrumbs->unshift(2, 'Genealogy List', '#');
             $data['breadcrumb']             = $this->breadcrumbs->show();
 
+        
             $data['content']                = "genealogy_list/index";
+            echo Modules::run("templates/".$this->config->item('theme'), $data);
+        }
+
+        function right_member()
+        {
+
+            $data['meta_title']             = "Right member";
+            $data['meta_description']       = "Right member";
+            $data['meta_keywords']          = "Right member";
+            $data['page_title']             = "Right member";
+            $data['module']                 = "Right member";
+            $data['menu']                   = "right member";
+            $data['submenu']                = "r_list";
+            $data['childmenu']              = "";
+            $data['loggedin']               = "yes";
+
+            $this->breadcrumbs->unshift(1, 'Genealogy', genealogy_constants::right_member_url);
+            $this->breadcrumbs->unshift(2, 'Right list', '#');
+            $data['breadcrumb']             = $this->breadcrumbs->show();
+
+            $data['content']                = "genealogy_list/right_list";
             echo Modules::run("templates/".$this->config->item('theme'), $data);
         }
 
@@ -50,11 +72,32 @@
             echo Modules::run("templates/".$this->config->item('theme'), $data);
         }
 
+        function get_user()
+        {
+
+            $id = $this->session->userdata('user_id');
+            if(!empty($id))
+            {
+                $userid = $this->genealogy->get_ownid($id);
+                if(!empty($userid))
+                {
+                    $response = ['error' => 0, 'message' => 'User data found'];
+                    $this->session->set_flashdata('status', $response);
+                }
+                else{
+                    $response = ['error' => 1, 'message' => 'User data not found'];
+                    $this->session->set_flashdata('status', $response);
+                }
+            }
+            return $userid['ownid'];
+        }
 
         function left_list()
         {  
             $condition          = 'uo.placement = "leftmember"';
-            $list               = $this->genealogy->get_data($condition, '', '', '');
+            $ownid              = $this->get_user();
+            $conditions         = $this->get_list($ownid,$condition);
+            $list               = $this->genealogy->get_data($conditions, '', '', '');
             $no                 = isset($_GET['offset']) ? $_GET['offset'] : 0;
             foreach ($list as $key => $value) {
                 if(isset($value->createddate) && !empty($value->createddate) && $value->createddate !== '0000-00-00 00:00:00')
@@ -65,7 +108,7 @@
                 {
                     $createddate = 'NA';
                 }
-
+                
                 $status         = '';
                 if($value->status == 0)
                 {
@@ -86,12 +129,12 @@
                 $row['date']                                    = $value->date;
                 $row['sponsorid']                               = $value->sponsorid;
                 $row['createddate']                             = $createddate;
-           
+                
                 $tabledata[]                                    = $row;
             }
 
             $output             = array(
-                                        "total"      => $this->genealogy->get_data($condition, '', '', 'allcount'),
+                                        "total"      => $this->genealogy->get_data($conditions, '', '', 'allcount'),
                                         "rows"       => $tabledata,
                                     );
 
@@ -100,8 +143,10 @@
 
         function right_list()
         {  
-            $condition               = 'uo.placement = "rightmember"';
-            $list                    = $this->genealogy->get_data($condition, '', '', '');
+            $condition               = 'uo.placement = "leftmember"';
+            $ownid                   = $this->get_user();
+            $conditions              = $this->get_list($ownid['ownid'],$condition);
+            $list                    = $this->genealogy->get_data($conditions,'', '', '');
             $no                      = isset($_GET['offset']) ? $_GET['offset'] : 0;
             foreach ($list as $key => $value) {
                 if(isset($value->createddate) && !empty($value->createddate) && $value->createddate !== '0000-00-00 00:00:00')
@@ -138,7 +183,7 @@
             }
 
             $output                  = array(
-                                            "total"      => $this->genealogy->get_data($condition, '', '', 'allcount'),
+                                            "total"      => $this->genealogy->get_data($conditions, '', '', 'allcount'),
                                             "rows"       => $tabledata,
                                          );
 
@@ -147,8 +192,9 @@
 
         function my_directs_list()
         {
-            $condition               = 'uo.sponsorid = "ROOT"';
-            $list                    = $this->genealogy->get_data($condition, '', '', '');
+            $ownid                   = $this->get_user();
+            $condition               = 'uo.sponsorid = "'.$ownid['ownid'].'"';
+            $list                    = $this->genealogy->get_direct($condition, '', '', '');
             $no                      = isset($_GET['offset']) ? $_GET['offset'] : 0;
             foreach ($list as $key => $value) {
                 if(isset($value->createddate) && !empty($value->createddate) && $value->createddate !== '0000-00-00 00:00:00')
@@ -185,7 +231,7 @@
                 $tabledata[]                                    = $row;
             }
             $output                  = array(
-                                            "total"      => $this->genealogy->get_data($condition, '', '', 'allcount'),
+                                            "total"      => $this->genealogy->get_direct($condition, '', '', 'allcount'),
                                             "rows"       => $tabledata,
                                          );
 
@@ -193,5 +239,27 @@
         }
 
      
+        function get_list($userid,$condition)
+        {
+            $list                    = $this->genealogy->get_user($userid,$condition);
+            foreach ($list as $key => $value) {
+                $data = $this->search_member($value->ownid);
+            }
+            return $data;
+        }
+
+        function search_member($userid)
+        {
+            $ownid_Array             = array();
+            $ownid_Array[]           =$userid;
+            $list = $this->genealogy->search_user($userid);
+            foreach ($list as $key => $value) {
+                if(!empty($value->ownid)){
+                    $ownid_Array     = array_merge($ownid_Array, $this->search_member($value->ownid));
+                }
+            }
+            return $ownid_Array;
+    
+        }
     }
 ?>

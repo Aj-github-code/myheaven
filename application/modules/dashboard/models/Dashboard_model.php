@@ -8,6 +8,7 @@
             parent::__construct();
             $this->table_franchise 			= signin_table::sql_tbl_users;
             $this->table_franchise_orders   = orders_table::sql_tbl_franchise_orders;
+            $this->table_pinreferencetable = dashboard_table::sql_tbl_pinreferencetable;
         }
 
         function get_count($conditions, $table, $group_by='')
@@ -50,5 +51,14 @@
 			$query = $this->db->get();
             $sum = $query->row_array();
             return $sum[$column];
+        }
+
+        function get_data($userid)
+        {
+
+            $this->db->select('totalunitleft,totalunitright,totalusedunitleft,totalusedunitright');
+            $this->db->where('ownid',$userid);
+            $result =$this->db->get($this->table_pinreferencetable);
+            return $result->row_array();
         }
     }
